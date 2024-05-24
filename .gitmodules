@@ -1,0 +1,3 @@
+[submodule "Parchment/vendor/spdlog"]
+	path = Parchment/vendor/spdlog
+	url = https://github.com/gabime/spdlog

@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Parchment\Log.h" />
     <ClInclude Include="Src\Parchment.h" />
     <ClInclude Include="Src\Parchment\Application.h" />
     <ClInclude Include="Src\Parchment\Core.h" />
     <ClInclude Include="Src\Parchment\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Parchment\Log.cpp" />
     <ClCompile Include="Src\Parchment\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -67,6 +69,7 @@
       <PreprocessorDefinitions>PCH_PLATFORM_WINDOWS;PCH_BUUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);PCH_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Parchment\vendor\spdlog\include;$(SolutionDir)Parchment\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,6 +85,7 @@
       <PreprocessorDefinitions>PCH_PLATFORM_WINDOWS;PCH_BUUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);PCH_PLATFORM_WINDOWS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Parchment\vendor\spdlog\include;$(SolutionDir)Parchment\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
