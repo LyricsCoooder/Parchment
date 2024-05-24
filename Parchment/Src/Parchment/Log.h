@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "Parchment/Core.h"
+#include "Core.h"
 #include "spdlog/spdlog.h"
 
 namespace Parch
