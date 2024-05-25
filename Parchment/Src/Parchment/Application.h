@@ -1,7 +1,9 @@
 #pragma once
 
-#include "Core.h"
-#include "Events/Event.h"
+#include "Parchment/Core.h"
+#include "Parchment/Events/Event.h"
+#include "Parchment/Events/ApplicationEvent.h"
+#include "Parchment/Window.h"
 
 namespace Parch {
 	
@@ -12,6 +14,12 @@ namespace Parch {
 		virtual ~Application();
 
 		void Run();
+
+		void OnEvent(Event& e);
+		bool OnWindowClose(WindowCloseEvent& e);
+	private:
+		std::unique_ptr<Window> m_Window;
+		bool m_Running = true;
 	};
 
 	Application* CreateApplication();

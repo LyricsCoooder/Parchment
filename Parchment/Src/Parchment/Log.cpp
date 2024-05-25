@@ -1,6 +1,6 @@
 #include "Pchpch.h"
-#include "Log.h"
 
+#include "Parchment/Log.h"
 #include "spdlog/sinks/stdout_color_sinks.h"
 
 namespace Parch {

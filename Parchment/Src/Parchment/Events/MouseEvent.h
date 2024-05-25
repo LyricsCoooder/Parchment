@@ -65,6 +65,6 @@ namespace Parch {
 		MouseButtonReleasedEvent(int button)
 			: MouseButtonEvent(button) {}
 
-		EVENT_CLASS_TYPE(MouseButtonReleasedEvent)
+		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
 }

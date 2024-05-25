@@ -7,6 +7,12 @@
     <Filter Include="Parchment\Events">
       <UniqueIdentifier>{6B5017AB-5749-36FD-807B-1B826CD31509}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Parchment.h" />
@@ -34,7 +40,13 @@
     <ClInclude Include="Src\Parchment\Log.h">
       <Filter>Parchment</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Parchment\Window.h">
+      <Filter>Parchment</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Pchpch.h" />
+    <ClInclude Include="Src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Parchment\Application.cpp">
@@ -44,5 +56,8 @@
       <Filter>Parchment</Filter>
     </ClCompile>
     <ClCompile Include="Src\Pchpch.cpp" />
+    <ClCompile Include="Src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

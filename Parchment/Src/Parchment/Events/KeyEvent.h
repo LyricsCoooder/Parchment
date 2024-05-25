@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Event.h"
+#include "Parchment/Events/Event.h"
 
 namespace Parch {
 
@@ -20,10 +20,10 @@ namespace Parch {
 
 	};
 
-	class PCH_API KeyPressEvent : public KeyEvent
+	class PCH_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressEvent(int keyCode, int repeatCount)
+		KeyPressedEvent(int keyCode, int repeatCount)
 			: KeyEvent(keyCode), m_RepeatCount(repeatCount) {}
 
 		inline int GetRepeatCount() const { return m_RepeatCount; }

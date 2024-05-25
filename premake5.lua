@@ -10,6 +10,11 @@ workspace "Parchment"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"] = "Parchment/vendor/GLFW/include"
+
+include "Parchment/vendor/GLFW"
+
 project "Parchment"
 	location "Parchment"
 	kind "SharedLib"
@@ -30,7 +35,15 @@ project "Parchment"
 	includedirs
 	{
 		"%{prj.name}/Src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"
@@ -41,7 +54,8 @@ project "Parchment"
 		defines
 		{
 			"PCH_PLATFORM_WINDOWS",
-			"PCH_BUUILD_DLL"
+			"PCH_BUUILD_DLL",
+			"PCH_ENABLE_ASSERTS"
 		}
 
 		postbuildcommands

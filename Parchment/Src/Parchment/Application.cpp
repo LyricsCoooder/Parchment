@@ -1,14 +1,16 @@
 #include "Pchpch.h"
 #include "Application.h"
 
-#include "Parchment/Events/ApplicationEvent.h"
 #include "Parchment/Log.h"
 
 namespace Parch {
 
+#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
 
 	Application::~Application()
@@ -17,14 +19,22 @@ namespace Parch {
 	}
 
 	void Application::Run()
-	{
-		WindowResizeEvent e(1200, 720);
-		PCH_INFO("{}: (Height:{}, Width:{})", e.GetName(), e.GetHeight(), e.GetWidth());
-		
-		while (true)
+	{	
+		while (m_Running)
 		{
-
+			m_Window->OnUpdate();
 		}
 	}
 
+	void Application::OnEvent(Event& e)
+	{
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& e)
+	{
+		m_Running = false;
+		return true;
+	}
 }
