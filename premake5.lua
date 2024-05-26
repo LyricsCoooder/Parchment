@@ -12,8 +12,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 IncludeDir = {}
 IncludeDir["GLFW"] = "Parchment/vendor/GLFW/include"
-
+IncludeDir["Glad"] = "Parchment/vendor/Glad/include"
+ 
 include "Parchment/vendor/GLFW"
+include "Parchment/vendor/Glad"
 
 project "Parchment"
 	location "Parchment"
@@ -36,14 +38,15 @@ project "Parchment"
 	{
 		"%{prj.name}/Src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib",
-		"dwmapi.lib"
 	}
 
 	filter "system:windows"
@@ -55,7 +58,8 @@ project "Parchment"
 		{
 			"PCH_PLATFORM_WINDOWS",
 			"PCH_BUUILD_DLL",
-			"PCH_ENABLE_ASSERTS"
+			"PCH_ENABLE_ASSERTS",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

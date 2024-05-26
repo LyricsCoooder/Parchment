@@ -4,6 +4,7 @@
 #include "Parchment/Events/Event.h"
 #include "Parchment/Events/ApplicationEvent.h"
 #include "Parchment/Window.h"
+#include "Parchment/LayerStack.h"
 
 namespace Parch {
 	
@@ -16,10 +17,15 @@ namespace Parch {
 		void Run();
 
 		void OnEvent(Event& e);
-		bool OnWindowClose(WindowCloseEvent& e);
+
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		LayerStack m_LayerStack;
 	};
 
 	Application* CreateApplication();
