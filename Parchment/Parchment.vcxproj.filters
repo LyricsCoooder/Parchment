@@ -7,8 +7,14 @@
     <Filter Include="Parchment\Events">
       <UniqueIdentifier>{6B5017AB-5749-36FD-807B-1B826CD31509}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Parchment\ImGui">
+      <UniqueIdentifier>{D124340D-3DB0-A1D1-46C1-24C6B2CBFDD1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
@@ -37,6 +43,9 @@
     <ClInclude Include="Src\Parchment\Events\MouseEvent.h">
       <Filter>Parchment\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Parchment\ImGui\ImGuiLayer.h">
+      <Filter>Parchment\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Parchment\Layer.h">
       <Filter>Parchment</Filter>
     </ClInclude>
@@ -50,6 +59,15 @@
       <Filter>Parchment</Filter>
     </ClInclude>
     <ClInclude Include="Src\Pchpch.h" />
+    <ClInclude Include="Src\Platform\OpenGL\imgui_impl_glfw.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Platform\OpenGL\imgui_impl_opengl3.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Platform\OpenGL\imgui_impl_opengl3_loader.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -59,6 +77,9 @@
     <ClCompile Include="Src\Parchment\Application.cpp">
       <Filter>Parchment</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Parchment\ImGui\ImGuiLayer.cpp">
+      <Filter>Parchment\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Parchment\Layer.cpp">
       <Filter>Parchment</Filter>
     </ClCompile>
@@ -66,6 +87,12 @@
       <Filter>Parchment</Filter>
     </ClCompile>
     <ClCompile Include="Src\Pchpch.cpp" />
+    <ClCompile Include="Src\Platform\OpenGL\imgui_impl_glfw.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Platform\OpenGL\imgui_impl_opengl3.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
